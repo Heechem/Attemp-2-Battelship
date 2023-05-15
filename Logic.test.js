@@ -13,3 +13,14 @@ describe('test ship factory function', () => {
     expect(shipTest.getDirection()).toBe('vertical');
   });
 });
+
+describe('Hit function tests ', () => {
+  const shipTest = ship('submarine');
+  test('no hits', () => {
+    expect(shipTest.getHits()).toEqual([null, null, null]);
+  });
+  test('one hit', () => {
+    shipTest.hit(2);
+    expect(shipTest.getHits()).toEqual([null, null, 'hit']);
+  });
+});

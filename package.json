@@ -16,5 +16,8 @@
   },
   "dependencies": {
     "eslint-config-wesbos": "^3.2.3"
+  },
+  "jest": {
+    "verbose": true
   }
 }
