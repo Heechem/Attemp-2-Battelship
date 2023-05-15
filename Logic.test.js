@@ -24,3 +24,18 @@ describe('Hit function tests ', () => {
     expect(shipTest.getHits()).toEqual([null, null, 'hit']);
   });
 });
+
+describe('Is sunk function test', () => {
+  const shipTest = ship('destroyer');
+  test('not sunk', () => {
+    expect(shipTest.isSunk()).toBe(false);
+  });
+  test('hit but not sunk', () => {
+    shipTest.hit(0);
+    expect(shipTest.isSunk()).toBe(false);
+  });
+  test('sunk', () => {
+    shipTest.hit(1);
+    expect(shipTest.isSunk()).toBe(true);
+  });
+});
